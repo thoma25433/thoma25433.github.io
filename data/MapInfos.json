@@ -1,7 +1,0 @@
-[
-null,
-{"id":1,"expanded":true,"name":"oHouse","order":1,"parentId":0,"scrollX":982.8,"scrollY":553.1999999999999},
-{"id":2,"expanded":false,"name":"iHouse","order":2,"parentId":1,"scrollX":832,"scrollY":640},
-{"id":3,"expanded":true,"name":"bpass","order":3,"parentId":0,"scrollX":982.8,"scrollY":553.1999999999999},
-{"id":4,"expanded":false,"name":"Cave","order":4,"parentId":3,"scrollX":982.8,"scrollY":553.1999999999999}
-]
