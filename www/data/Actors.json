@@ -1,9 +1,11 @@
 [
 null,
-{"id":1,"battlerName":"Actor1_1","characterIndex":0,"characterName":"Actor1","classId":1,"equips":[1,1,2,3,4],"faceIndex":0,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Hero","nickname":"","note":"","profile":""},
-{"id":2,"battlerName":"Actor1_3","characterIndex":2,"characterName":"Actor1","classId":2,"equips":[2,1,2,3,0],"faceIndex":2,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Warrior","nickname":"","note":"","profile":""},
-{"id":3,"battlerName":"Actor2_6","characterIndex":5,"characterName":"Actor2","classId":3,"equips":[3,0,2,3,4],"faceIndex":5,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Mage","nickname":"","note":"","profile":""},
-{"id":4,"battlerName":"Actor2_3","characterIndex":2,"characterName":"Actor2","classId":4,"equips":[4,0,2,3,4],"faceIndex":2,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Priest","nickname":"","note":"","profile":""},
-{"id":5,"battlerName":"Actor1_7","characterIndex":6,"characterName":"Actor1","classId":5,"equips":[1,1,2,3,4],"faceIndex":6,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Paladin","nickname":"","note":"","profile":""},
-{"id":6,"battlerName":"Actor1_5","characterIndex":4,"characterName":"Actor1","classId":6,"equips":[7,7,2,3,4],"faceIndex":4,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Assassin","nickname":"","note":"","profile":""}
+{"id":1,"battlerName":"Actor1_2","characterIndex":1,"characterName":"Actor1","classId":1,"equips":[1,1,2,3,4],"faceIndex":1,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Hero","nickname":"","note":"","profile":""},
+{"id":2,"battlerName":"Actor1_4","characterIndex":3,"characterName":"Actor1","classId":2,"equips":[2,1,2,3,0],"faceIndex":3,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Warrior","nickname":"","note":"","profile":""},
+{"id":3,"battlerName":"Actor3_8","characterIndex":7,"characterName":"Actor3","classId":3,"equips":[3,0,2,3,4],"faceIndex":7,"faceName":"Actor3","traits":[],"initialLevel":1,"maxLevel":99,"name":"Mage","nickname":"","note":"","profile":""},
+{"id":4,"battlerName":"Actor2_4","characterIndex":3,"characterName":"Actor2","classId":4,"equips":[4,0,2,3,4],"faceIndex":3,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Priest","nickname":"","note":"","profile":""},
+{"id":5,"battlerName":"Actor1_8","characterIndex":7,"characterName":"Actor1","classId":5,"equips":[1,1,2,3,4],"faceIndex":7,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Paladin","nickname":"","note":"","profile":""},
+{"id":6,"battlerName":"Actor1_6","characterIndex":5,"characterName":"Actor1","classId":6,"equips":[7,7,2,3,4],"faceIndex":5,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"Assassin","nickname":"","note":"","profile":""},
+{"id":7,"battlerName":"","characterIndex":0,"characterName":"Nature","classId":7,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"Nature","traits":[],"initialLevel":1,"maxLevel":99,"name":"Buddadawg","nickname":"Buddadawg","note":"","profile":"The dawg with the budda on im."},
+{"id":8,"battlerName":"Actor2_2","characterIndex":1,"characterName":"Actor2","classId":8,"equips":[9,0,2,3,4],"faceIndex":1,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Spellblade","nickname":"","note":"","profile":""}
 ]
