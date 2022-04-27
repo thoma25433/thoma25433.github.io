@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Position</title>
+  <style media="screen">
+    body {
+      height: 100%;
+    }
+
+    .thumbsBox {
+      width: 50%;
+      height: 50%;
+      border: 1px solid black;
+    }
+
+    .pTop {
+      position: absolute;
+      top: 0px;
+      border: 1px solid black;
+      text-align: center;
+      padding-top: 30px;
+      ;
+      height: 65px;
+    }
+
+    .pBot {
+      position: absolute;
+      bottom: 0px;
+      border: 1px solid black;
+      text-align: center;
+      padding-top: 30px;
+      ;
+      height: 65px;
+    }
+
+    .pLeft {
+      position: absolute;
+      left: 0px;
+      border: 1px solid black;
+      text-align: center;
+      padding-top: 30px;
+      height: 65px;
+    }
+
+    .pRight {
+      position: absolute;
+      right: 0px;
+      border: 1px solid black;
+      text-align: center;
+      padding-top: 30px;
+      height: 65px;
+    }
+
+    #tUp {
+      background-color: #99ffa3;
+    }
+
+    #tWiggle {
+      background-color: #99ffff;
+    }
+
+    #tDown {
+      background-color: #ff9191;
+    }
+
+    #tOops {
+      background-color: #f7ff99;
+    }
+
+    #tUp:hover {
+      background-color: #ffffff;
+    }
+
+    #tWiggle:hover {
+      background-color: #ffffff;
+    }
+
+    #tDown:hover {
+      background-color: #ffffff;
+    }
+
+    #tOops:hover {
+      background-color: #ffffff;
+    }
+
+    /*
+    #1 make four selectors, one for each ID
+    2# Each ID will be the correct HEXADECIMAL BACKGROUND COLOR
+    3# Four more selectors that have a lighter color when you hover over the ID
+    */
+  </style>
+</head>
+
+<body>
+  <div id="tUp" class="thumbsBox pTop pLeft">
+    <a href="http://192.168.10.69:420/tutd?thumb=up"> Up </a>
+  </div>
+  <div id="tWiggle" class="thumbsBox pTop pRight">
+    <a href="http://192.168.10.69:420/tutd?thumb=wiggle"> Wiggle </a>
+  </div>
+  <div id="tDown" class="thumbsBox pBot pLeft">
+    <a href="http://192.168.10.69:420/tutd?thumb=down"> Down </a>
+  </div>
+  <div id="tOops" class="thumbsBox pBot pRight">
+    <a href="http://192.168.10.69:420/tutd?thumb=oops"> Oops </a>
+  </div>
+</body>
+
+</html>
