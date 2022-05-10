@@ -9,5 +9,7 @@ null,
 {"id":7,"battlerName":"","characterIndex":0,"characterName":"Nature","classId":7,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"Nature","traits":[],"initialLevel":1,"maxLevel":99,"name":"Buddadawg","nickname":"Buddadawg","note":"","profile":"The dawg with the budda on em."},
 {"id":8,"battlerName":"Actor2_2","characterIndex":1,"characterName":"Actor2","classId":8,"equips":[9,0,2,3,4],"faceIndex":1,"faceName":"Actor2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Spellblade","nickname":"","note":"","profile":""},
 {"id":9,"battlerName":"h","characterIndex":0,"characterName":"h","classId":9,"equips":[17,14,13,12,5],"faceIndex":0,"faceName":"h","traits":[],"initialLevel":99,"maxLevel":99,"name":"op for ez clears","nickname":"","note":"","profile":""},
-{"id":10,"battlerName":"","characterIndex":6,"characterName":"People2","classId":1,"equips":[0,0,0,0,0],"faceIndex":6,"faceName":"People2","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""}
+{"id":10,"battlerName":"","characterIndex":6,"characterName":"People2","classId":10,"equips":[0,0,0,0,0],"faceIndex":6,"faceName":"People2","traits":[],"initialLevel":1,"maxLevel":99,"name":"Trickster","nickname":"","note":"","profile":""},
+{"id":11,"battlerName":"mebattler","characterIndex":0,"characterName":"me","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"me","traits":[],"initialLevel":1,"maxLevel":99,"name":"Me","nickname":"","note":"","profile":""},
+{"id":12,"battlerName":"","characterIndex":5,"characterName":"!Flame","classId":9,"equips":[5,0,13,12,5],"faceIndex":0,"faceName":"","traits":[],"initialLevel":99,"maxLevel":99,"name":"Wisp","nickname":"","note":"","profile":""}
 ]
