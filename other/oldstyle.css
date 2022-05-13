@@ -1,0 +1,147 @@
+body {
+  height: 100%;
+}
+
+.thumbsBox {
+  width: 45%;
+  height: 45%;
+  border-style: outset;
+}
+
+.pTop {
+  position: absolute;
+  top: 160px;
+  border-style: outset;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 100px;
+  color: #000000;
+}
+
+.pBot {
+  position: absolute;
+  bottom: 20px;
+  border-style: outset;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-size: 100px;
+  color: #000000;
+}
+
+.pLeft {
+  position: absolute;
+  left: 100px;
+  border-style: outset;
+  text-align: center;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  font-size: 100px;
+  color: #000000;
+}
+
+.pRight {
+  position: absolute;
+  right: 100px;
+  border-style: outset;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-size: 100px;
+  color: #000000;
+}
+
+#tUp {
+  background-color: #99ffa3;
+}
+
+#tWiggle {
+  background-color: #99ffff;
+}
+
+#tDown {
+  background-color: #ff9191;
+}
+
+#tOops {
+  background-color: #f7ff99;
+}
+
+#tUp:hover {
+  background-color: #ffffff;
+}
+
+#tWiggle:hover {
+  background-color: #ffffff;
+}
+
+#tDown:hover {
+  background-color: #ffffff;
+}
+
+#tOops:hover {
+  background-color: #ffffff;
+}
+
+#content {
+  border-left: 5px solid #49a8f5;
+  border-radius: 5px;
+}
+
+div {
+  background-color: #ffffff;
+}
+
+#headBox {
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+  border-style: outset;
+  background-color: #49a8f5;
+}
+
+p {
+  color: #000000;
+  margin: 10px;
+}
+
+.paraBox {
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  border-style: outset;
+}
+
+h1 {
+  margin: 10px;
+}
+
+h2 {
+  margin: 10px;
+}
+
+#navBox {
+  border-style: outset;
+  border-radius: 5px;
+  border-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px;
+}
+
+.link {
+  border-style: outset;
+  border-radius: 5px;
+  display: inline;
+  padding: 10px;
+}
+.link:hover{
+  border-style:inset;
+}
+img {
+  padding: 10px
+}
