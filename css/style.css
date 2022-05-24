@@ -1,11 +1,10 @@
 body {
   height: 100%;
-  background-color: blueviolet;
+  background-image: linear-gradient(to right, pink, purple);
 }
 
 #content {
   margin: 0px 300px;
-  float:none;
 }
 
 #headerBox {
@@ -27,10 +26,12 @@ p {
   margin: 10px 150px;
   padding: 10px;
   background-color: #ffffff;
+  box-shadow: 5px 5px #000000;
 }
 
 h1 {
   margin: 10px;
+  text-shadow: 2px 2px #ffffff;
 }
 
 h2 {
@@ -47,6 +48,7 @@ h2 {
   padding: 10px;
   font-family: sans-serif;
   background-color: #ffffff;
+  box-shadow: 5px 5px #000000;
 }
 
 .linkBox {
@@ -56,6 +58,7 @@ h2 {
   padding: 10px;
   font-family: sans-serif;
   color: #000000;
+  box-shadow: 2px 2px #000000;
 }
 
 .linkBox:hover {
@@ -76,5 +79,5 @@ a:active {
 }
 
 img {
-  margin:0px;
+  margin: 0px;
 }

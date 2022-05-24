@@ -82,10 +82,12 @@ $(document).ready(function() {
     $("." + menu).css("display", "block");
     return menu;
   }
-  function mineclick(){
+
+  function mineclick() {
     $("#mine").css("background-color", "blue");
   };
-  function mineup(){
+
+  function mineup() {
     $("#mine").css("background-color", "white");
-    };
+  };
 });
