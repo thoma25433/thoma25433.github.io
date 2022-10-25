@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../../img/favicon.png">
+        <title>Idle Business</title>
+        <style>
+        body{
+            background-color: #000015;
+            height: 100%;
+        }#content  {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          user-select: none;
+        }#game{
+          display: flex;
+          justify-content: center;
+          border: 5px solid #78756f;
+          border-radius: 5px;
+          padding-top: 1%;
+          padding-left: 2%;
+          padding-right: 5%;
+          padding-bottom: 1%;
+          flex-direction: column;
+          background-color: #b3b0aa;
+          box-shadow: 2px 2px #737170;
+          font-family: OCR A;
+          font-weight: normal;
+        }#back{
+          margin-bottom: 2%;
+        }#settingsbox{
+           display: none;
+         }#settingpic {
+          display: flex;
+          justify-content: center;
+          position: sticky;
+        }h5 {
+          margin-top: 1%;
+        }.gens {
+          margin: 7% 0 7% 0;
+        }#headerbox {
+          display: flex;
+          justify-content: center;
+          margin-top: 2%;
+          color: #e3e0d8;
+          font-size: 20px;
+          text-shadow: 2px 2px #737170;
+          font-family: OCR A;
+          font-weight: bold;
+        }#inv {
+          display: flex;
+          justify-content: space-around;
+          flex-direction: row;
+          position: sticky;
+          gap: 10px;
+          min-width: 35%;
+          min-height: 25%;
+        }.invbox {
+          display: flex;
+          border: 3px solid #78756f;
+          border-radius: 5px;
+          padding: 10px;
+          background-color: #b3b0aa;
+          position: sticky;
+          box-shadow: 4px 2px #737170;
+          min-width: 35%;
+          min-height: 25%;
+        }button {
+          border-radius: 8px;
+          border: 2px solid gray;
+          transition-duration: 0.4s;
+          cursor: pointer;
+          text-align: center;
+          box-shadow: 0 4px #999;
+          font-family: OCR A;
+          font-weight: bold;
+        }button:active {
+          transform: translateY(3px);
+          box-shadow: 0 2px #737170;
+          color: black;
+        }
+        </style>
+        <script>
+
+        var player = {
+          point: {
+            description: 'the amount of points/per second you have',
+            owned: 0,
+            sec: 0,
+          },
+          pres: {
+            description: 'the amount of prestige/price of prestige',
+            level: 0,
+            cost: 25000,
+        }
+      };
+        var gens = {
+          gen1: {
+            name: 'Worker',
+            description: 'A regular Worker for your company',
+            gain: 1,
+            cost: 0,
+            owned: 0,
+          },
+          gen2: {
+            name: 'Secretary',
+            description: 'A secretary for your company',
+            gain: 3,
+            cost: 500,
+            owned: 0,
+          },
+          gen3: {
+            name: 'Manager',
+            description: 'A manager for your company',
+            gain: 7,
+            cost: 3000,
+            owned: 0,
+          }
+      };
+        function update() {
+            document.getElementById("showPoint").innerText = player.point.owned;
+            document.getElementById("showpsec").innerText = player.point.sec;
+            document.getElementById("showplvl").innerText = player.pres.level;
+            document.getElementById("prescost").innerText = player.pres.cost;
+            document.getElementById("gen1add").innerText = gens.gen1.gain;
+            document.getElementById("gen1price").innerText = gens.gen1.cost;
+            document.getElementById("gen1num").innerText = gens.gen1.owned;
+            document.getElementById("gen2add").innerText = gens.gen2.gain;
+            document.getElementById("gen2price").innerText = gens.gen2.cost;
+            document.getElementById("gen2num").innerText = gens.gen2.owned;
+            document.getElementById("gen3add").innerText = gens.gen3.gain;
+            document.getElementById("gen3price").innerText = gens.gen3.cost;
+            document.getElementById("gen3num").innerText = gens.gen3.owned;
+            if (player.point.owned < gens.gen1.cost) {
+              document.getElementById('buyButton1').style.backgroundColor = '#f55b5b';
+            }else {
+              document.getElementById('buyButton1').style.backgroundColor = '#4CAF50';
+            }
+            if (player.point.owned < gens.gen2.cost) {
+              document.getElementById('buyButton2').style.backgroundColor = '#f55b5b';
+            }else {
+              document.getElementById('buyButton2').style.backgroundColor = '#4CAF50';
+            }
+            if (player.point.owned < gens.gen3.cost) {
+              document.getElementById('buyButton3').style.backgroundColor = '#f55b5b';
+            }else {
+              document.getElementById('buyButton3').style.backgroundColor = '#4CAF50';
+            }
+            if (player.point.owned < player.pres.cost) {
+              document.getElementById('prest').style.backgroundColor = '#f55b5b';
+            }else {
+              document.getElementById('prest').style.backgroundColor = '#4CAF50';
+            }
+        }
+        function save() {
+          var save = {
+            player: player,
+            gens: gens,
+
+          }
+          localStorage.setItem("save",JSON.stringify(save));
+        }
+        function load() {
+          var savegame = JSON.parse(localStorage.getItem("save"));
+          if (typeof savegame.player !== "undefined") player = savegame.player;
+          if (typeof savegame.gens !== "undefined") gens = savegame.gens;
+        }
+        function delSave() {
+          localStorage.removeItem("save")
+          location.reload()
+        }
+        setInterval(function() {
+          update();
+            if (gens.gen1.owned >= 1){
+            player.point.owned += player.point.sec * .25;
+            }
+        }, 250)
+        setInterval(function() {
+            // save();
+        }, 1000)
+        function buygen1() {
+          if (player.point.owned >= gens.gen1.cost) {
+            player.point.owned -= gens.gen1.cost;
+            gens.gen1.owned++;
+            gens.gen1.cost += 1;
+            gens.gen1.cost *= 1.1;
+            gens.gen1.cost = Math.round(gens.gen1.cost)
+            player.point.sec += gens.gen1.gain;
+            update();
+          }else {
+          }
+        }
+        function buygen2() {
+          if (player.point.owned >= gens.gen2.cost) {
+            player.point.owned -= gens.gen2.cost;
+            gens.gen2.owned++;
+            gens.gen2.cost *= 1.1;
+            gens.gen2.cost = Math.round(gens.gen2.cost)
+            player.point.sec += gens.gen2.gain;
+            update();
+          }else {
+        }
+        }
+        function buygen3() {
+          if (player.point.owned >= gens.gen3.cost) {
+            player.point.owned -= gens.gen3.cost;
+            gens.gen3.owned++;
+            gens.gen3.cost *= 1.1;
+            gens.gen3.cost = Math.round(gens.gen3.cost)
+            player.point.sec += gens.gen3.gain;
+            update();
+          }else {
+          }
+        }
+        function prestige() {
+          if (confirm("Are you sure?") == true){
+        if (player.point.owned >= player.pres.cost) {
+          player.point.owned -= player.point.owned;
+          player.point.sec -= player.point.sec;
+          gens.gen1.owned -= gens.gen1.owned;
+          gens.gen2.owned -= gens.gen2.owned;
+          gens.gen3.owned -= gens.gen3.owned;
+          gens.gen1.cost = 0;
+          gens.gen2.cost = 500;
+          gens.gen3.cost = 3000;
+          player.pres.level++;
+          player.pres.cost *= 2;
+          gens.gen1.gain *= 1.5;
+          gens.gen1.gain = Math.round(gens.gen1.gain)
+          gens.gen2.gain *= 1.5;
+          gens.gen2.gain = Math.round(gens.gen2.gain)
+          gens.gen3.gain *= 1.5;
+          gens.gen3.gain = Math.round(gens.gen3.gain)
+          update();
+        } else {
+
+        }
+      }
+    }
+        function setting() {
+          document.getElementById("settingsbox").style.display = "block";
+            document.getElementById("gam2").style.display = "none";
+          }
+          function back() {
+              document.getElementById("settingsbox").style.display = "none";
+              document.getElementById("gam2").style.display = "block";
+            }
+
+</script>
+    </head>
+    <body onload="load()">
+      <table>
+        <div id="content">
+          <div id="headerbox">
+              <h1>Idle Business</h1>
+          </div>
+          <div id="inv">
+              <p class="invbox">Money :&nbsp<span id="showPoint">0</span></p>
+              <p class="invbox">Per Second :&nbsp<span id="showpsec">0</span></p>
+              <p class="invbox">Business :&nbsp#<span id="showplvl">0</span></p>
+          </div>
+            <div id="game">
+              <img id='settingpic' src="img/gear.png" alt="Settings" width="50px" length="50px" onclick='setting()'>
+    <div id="settingsbox">
+        <button id='back' onclick='back()'> &lt-- </button>
+        <div id="savebox">
+        <h2>Game Explanation</h2>You just bought your first business!<br>Hire workers to get more money. Once you get enough money, you can <br>start a new business and get a boost in earnings.<br>Can you come out on top?<br><br><br><br><br><br><p>Made by: Tommy Blount</p>Discord: parsifaal#8008<br>Dm me with any suggestions<br><br>
+        <button onclick="delSave()">Delete Save</button>
+    </div>
+    </div>
+    <div id='gam2'>
+                <div id="idleshop">
+                    <div class="gens">
+                      <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
+                    <button onclick="buygen1()" id="buyButton1">Hire Worker</button>
+                        <h5>+<span id="gen1add">1</span> Money Per Second | Cost: <span id="gen1price">0</span> | Owned: <span id="gen1num">0</span></h5>
+                    </div>
+                    <div class="gens">
+                      <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
+                        <button onclick="buygen2()" id="buyButton2">Hire Secretary </button>
+                        <h5>+<span id="gen2add">3</span> Money Per Second | Cost: <span id="gen2price">500</span> | Owned: <span id="gen2num">0</span></h5>
+                    </div>
+                    <div class="gens">
+                      <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
+                        <button onclick="buygen3()" id="buyButton3">Hire Manager</button>
+                        <h5>+<span id="gen3add">7</span> Money Per Second | Cost: <span id="gen3price">3000</span> | Owned: <span id="gen3num">0</span></h5>
+                    </div>
+                  </div>
+                  <div id="prestigebox">
+                      <button onclick="prestige()" id="prest">Start New Business</button>
+                      <h5>Costs <span id="prescost">25000</span> money and resets your progress, but boosts your earnings by 1.5x</h5>
+                      <br>
+                  </div>
+</div>
+        </div>
+      </table>
+    </body>
+</html>

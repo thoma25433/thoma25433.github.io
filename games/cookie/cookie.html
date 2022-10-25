@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../../img/favicon.png">
+        <title>Cookie Clicker</title>
+        <style>
+        #content {
+          height:100%;
+          display: flex;
+          justify-content: center;
+          flex-direction: row;
+          user-select: none;
+          pointer-events: auto;
+        }
+        #left{
+          height:100%;
+          width: 33.33%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          border: 2px solid black;
+          margin: .75%;
+        }
+        #mid{
+          height:100%;
+          width: 33.33%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          border: 2px solid black;
+          margin: .25%;
+        }
+        #right{
+          height:100%;
+          width: 33.33%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          border: 2px solid black;
+          margin: .75%;
+        }
+        #inv{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          margin-top: .25%;
+          margin-bottom: .25%;
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+        #shop{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+        #upgrades{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+        #click{
+          display: flex;
+          justify-content: center;
+          flex-direction: row;
+          margin: 10%;
+        }
+        #
+        img{
+          user-select: none;
+        }
+        img:active {
+          transform: translateY(3px);
+        }
+        </style>
+
+        <script>
+        var player = {
+          point: {
+            owned: 0,
+            sec: 0,
+            click: 1,
+          },
+          pres: {
+            level: 0,
+            cost: 25000,
+        }
+      };
+      var gen = {
+        pointer: {
+          cost: 10,
+          gain: 0.1,
+          owned: 0,
+        },
+        grandma: {
+          cost: 30,
+          gain: 1,
+          owned: 0,
+      },
+        farm: {
+          cost: 140,
+          gain: 3,
+          owned: 0,
+        },
+        factory: {
+          cost: 600,
+          gain: 7,
+          owned: 0,
+        }
+    };
+    var upgrade = {
+      clickup: {
+        cost: 100,
+        owned: 0,
+      },
+      pointup: {
+        cost: 350,
+        owned:0,
+      },
+      grandup: {
+        cost: 600,
+        owned: 0,
+      },
+      farmup: {
+        cost: 1400,
+        owned: 0,
+      },
+      facup: {
+        cost: 3000,
+        owned: 0,
+      }
+  };
+      function update(){
+        document.getElementById('cookieamount').innerText = (Math.round(player.point.owned * 100) / 100).toFixed(2);
+        document.getElementById('persec').innerText = (Math.round(player.point.sec * 100) / 100).toFixed(1);
+        document.getElementById('perclick').innerText = player.point.click;
+        document.getElementById('pointerprice').innerText = (Math.round(gen.pointer.cost * 100) / 100).toFixed(2);
+        document.getElementById('pointerowned').innerText = gen.pointer.owned;
+        document.getElementById('pointergain').innerText = gen.pointer.gain;
+        document.getElementById('grandmaprice').innerText = (Math.round(gen.grandma.cost * 100) / 100).toFixed(2);
+        document.getElementById('grandmaowned').innerText = gen.grandma.owned;
+        document.getElementById('grandmagain').innerText = gen.grandma.gain;
+        document.getElementById('clickupcost').innerText = (Math.round(upgrade.clickup.cost * 100) / 100).toFixed(2);
+        document.getElementById('pointupcost').innerText = (Math.round(upgrade.pointup.cost * 100) / 100).toFixed(2);
+        document.getElementById('grandupcost').innerText = (Math.round(upgrade.grandup.cost * 100) / 100).toFixed(2);
+        document.getElementById('farmupcost').innerText = (Math.round(upgrade.farmup.cost * 100) / 100).toFixed(2);
+        document.getElementById('facupcost').innerText = (Math.round(upgrade.facup.cost * 100) / 100).toFixed(2);
+        document.getElementById('farmprice').innerText = (Math.round(gen.farm.cost * 100) / 100).toFixed(2);
+        document.getElementById('farmowned').innerText = gen.farm.owned;
+        document.getElementById('farmgain').innerText = gen.farm.gain;
+        document.getElementById('facprice').innerText = (Math.round(gen.factory.cost * 100) / 100).toFixed(2);
+        document.getElementById('facowned').innerText = gen.factory.owned;
+        document.getElementById('facgain').innerText = gen.factory.gain;
+
+      }
+      function add(){
+        player.point.owned += player.point.click;
+        update();
+      };
+      function buypointer(){
+        if (player.point.owned >= gen.pointer.cost) {
+        player.point.sec += gen.pointer.gain;
+        gen.pointer.owned++;
+        player.point.owned -= gen.pointer.cost
+        gen.pointer.cost *= 1.1;
+        update();
+        }
+      };
+      function buygrandma(){
+        if (player.point.owned >= gen.grandma.cost) {
+        player.point.sec += gen.grandma.gain;
+        gen.grandma.owned++;
+        player.point.owned -= gen.grandma.cost
+        gen.grandma.cost *= 1.1;
+        update();
+        }
+      };
+      function buyfarm(){
+        if (player.point.owned >= gen.farm.cost) {
+        player.point.sec += gen.farm.gain;
+        gen.farm.owned++;
+        player.point.owned -= gen.farm.cost
+        gen.farm.cost *= 1.1;
+        update();
+        }
+      };
+      function buyfac(){
+        if (player.point.owned >= gen.factory.cost) {
+        player.point.sec += gen.factory.gain;
+        gen.factory.owned++;
+        player.point.owned -= gen.factory.cost
+        gen.factory.cost *= 1.1;
+        update();
+        }
+      };
+      function buyclickup(){
+        if (player.point.owned >= upgrade.clickup.cost) {
+        player.point.click += 1;
+        player.point.owned -= upgrade.clickup.cost
+        upgrade.clickup.cost = upgrade.clickup.cost * 5
+        update();
+        }
+      };
+      function buypointup(){
+        if (player.point.owned >= upgrade.pointup.cost) {
+        player.point.owned -= upgrade.pointup.cost
+        player.point.sec -= gen.pointer.gain * gen.pointer.owned
+        gen.grandma.gain *= 2
+        player.point.sec += gen.pointer.gain * gen.pointer.owned
+        upgrade.grandup.cost = upgrade.pointup.cost * 5
+        upgrade.pointup.owned++
+        update();
+        }
+      };
+      function buygrandup(){
+        if (player.point.owned >= upgrade.grandup.cost) {
+        player.point.owned -= upgrade.grandup.cost
+        player.point.sec -= gen.grandma.gain * gen.grandma.owned
+        gen.grandma.gain *= 2
+        player.point.sec += gen.grandma.gain * gen.grandma.owned
+        upgrade.grandup.cost = upgrade.grandup.cost * 5
+        upgrade.grandup.owned++
+        update();
+      }
+    };
+    function buyfarmup(){
+      if (player.point.owned >= upgrade.farmup.cost) {
+      player.point.owned -= upgrade.farmup.cost
+      player.point.sec -= gen.farm.gain * gen.farm.owned
+      gen.farm.gain *= 2
+      player.point.sec += gen.farm.gain * gen.farm.owned
+      upgrade.farmup.cost = upgrade.farmup.cost * 5
+      upgrade.farmup.owned++
+      update();
+    }
+  };
+  function buyfarmup(){
+    if (player.point.owned >= upgrade.facup.cost) {
+    player.point.owned -= upgrade.facup.cost
+    player.point.sec -= gen.factory.gain * gen.factory.owned
+    gen.factory.gain *= 2
+    player.point.sec += gen.factory.gain * gen.factory.owned
+    upgrade.facup.cost = upgrade.facup.cost * 5
+    upgrade.facup.owned++
+    update();
+  }
+};
+      setInterval(function() {
+          update();
+          player.point.owned += player.point.sec * .10
+      }, 100)
+
+        </script>
+    </head>
+<body>
+<div id="content">
+  <div id="left">
+    <div id="upgrades">
+    <h1>Upgrades</h1>
+    <div id="clickup1">
+      <img draggable="false" src="img/up.png" alt="Click Upgrade" width='5%' length='5%' onclick='buyclickup()'>
+      <p>Click Upgrade | +1 Per Click | cost: <span id='clickupcost'>100</span> Cookies |</p>
+      <img draggable="false" src="img/up.png" alt="Pointer Upgrade" width='5%' length='5%' onclick='buypointup()'>
+      <p>Pointer Upgrade | pointer's CPS x2 | cost: <span id='pointupcost'>350</span> Cookies |</p>
+      <img draggable="false" src="img/up.png" alt="Grandma Upgrade" width='5%' length='5%' onclick='buygrandup()'>
+      <p>Grandma Upgrade | grandma's CPS x2 | cost: <span id='grandupcost'>600</span> Cookies |</p>
+      <img draggable="false" src="img/up.png" alt="Farm Upgrade" width='5%' length='5%' onclick='buyfarmup()'>
+      <p>Farm Upgrade | Farm's CPS x2 | cost: <span id='farmupcost'>1400</span> Cookies |</p>
+      <img draggable="false" src="img/up.png" alt="Factory Upgrade" width='5%' length='5%' onclick='buygfacup()'>
+      <p>Factory Upgrade | Factory's CPS x2 | cost: <span id='facupcost'>3000</span> Cookies |</p>
+    </div>
+    </div>
+  </div>
+  <div id="mid">
+    <div id="inv">
+      <h1>Cookies : <span id='cookieamount'>0</span></h1>
+      <h4>Per Click : <span id='perclick'>0</span></h4>
+      <h4>Per Second : <span id='persec'>0</span></h4>
+    </div>
+    <div id="click">
+      <img id='cookie' draggable="false" src="img/cookie.png" alt="Cookie Click" width="40%" length="40%" onclick='add()'>
+    </div>
+  </div>
+  <div id="right">
+    <div id=shop>
+    <h1>Shop</h1>
+    <img id='pointer' draggable="false" src="img/pointer.png" alt="Buy Pointer" width="5%" length="5%" onclick='buypointer()'>
+    <p>Pointer | +<span id='pointergain'>0.1</span> CPS | cost: <span id='pointerprice'>10</span> Cookies | owned : <span id='pointerowned'>0</span></p>
+    <img id='grandma' draggable="false" src="img/grandma.png" alt="Buy Grandma" width="5%" length="5%" onclick='buygrandma()'>
+    <p>Grandma | +<span id='grandmagain'>1</span> CPS | cost: <span id='grandmaprice'>30</span> Cookies | owned : <span id='grandmaowned'>0</span></p>
+    <img id='farm' draggable="false" src="img/farm.png" alt="Buy Farm" width="5%" length="5%" onclick='buyfarm()'>
+    <p>Farm | +<span id='farmgain'>3</span> CPS | cost: <span id='farmprice'>140</span> Cookies | owned : <span id='farmowned'>0</span></p>
+    <img id='fac' draggable="false" src="img/fac.png" alt="Buy Factory" width="5%" length="5%" onclick='buyfac()'>
+    <p>Factory | +<span id='facgain'>7</span> CPS | cost: <span id='facprice'>600</span> Cookies | owned : <span id='facowned'>0</span></p>
+  </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,10 +1,13 @@
-body {
-  height: 100%;
-  background-image: linear-gradient(to right, pink, purple);
+ body {
+height: 100%;
+  background-color: gray;
 }
 
 #content {
-  margin: 0px 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #headerBox {
@@ -12,6 +15,9 @@ body {
   padding: 1px;
   text-align: center;
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 p {
@@ -21,12 +27,20 @@ p {
 }
 
 .blogBox {
+  display: flex;
+  justify-content: center;
   border: 2px solid #000000;
   border-radius: 5px;
-  margin: 10px 150px;
-  padding: 10px;
+  margin-top: 3%;
+  padding-top: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
   background-color: #ffffff;
   box-shadow: 5px 5px #000000;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -42,20 +56,27 @@ h2 {
   border: 2px solid #000000;
   border-radius: 5px;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: space-around; */
+  justify-content: center;
+  flex-direction: row;
   margin: 10px;
-  padding: 10px;
+  padding: 1%;
   font-family: sans-serif;
   background-color: #ffffff;
   box-shadow: 5px 5px #000000;
+  position: sticky;
+  opacity: .75;
+  top: 0;
 }
 
 .linkBox {
   border: 2px solid #000000;
   border-radius: 5px;
-  display: inline;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1%;
+  margin: 1%;
   font-family: sans-serif;
   color: #000000;
   box-shadow: 2px 2px #000000;
@@ -78,6 +99,6 @@ a:active {
   color: #ffffff;
 }
 
-img {
-  margin: 0px;
+.lilpic {
+  padding: 1%;
 }
