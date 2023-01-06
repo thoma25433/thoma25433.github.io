@@ -6,7 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/favicon.png">
   <link rel="stylesheet" href="css/style.css">
-  <title>deftoneslvr</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
+  <title>Home</title>
   <style media="screen">
     #content{
       user-select: none;
@@ -20,34 +31,40 @@
 </head>
 
 <body>
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="active">Home</a>
+    <a href="update.html">Updates</a>
+    <a href="games.html">Games</a>
+    <a href="socials.html" >Contact</a>
+    <a href="about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    </div>
   <div id="content">
-    <div id="menuBox">
+    
+    <!-- <div id="menuBox">
       <div id="headerBox">
         <h1>Home</h1>
       </div>
       <div class="linkBox">
-        <a href="index.html"><img src="img/house.png" height=20px width=20px>Home</a>
+        <a href="index.html">Home</a>
       </div>
       <div class="linkBox">
-        <a href="games.html"><img src="img/controller.png" height=20px width=20px>Games</a>
+        <a href="games.html">Games</a>
       </div>
       <div class="linkBox">
-        <a href="about.html"><img src="img/question.png" height=20px width=20px>About</a>
+        <a href="about.html">About</a>
       </div>
       <div class="linkBox">
-        <a href="socials.html"><img src="img/phone.png" height=20px width=20px>Socials</a>
+        <a href="socials.html">Contact</a>
       </div>
-    </div>
-    <!-- <div class="blogBox">
-      <p></p>
-
     </div> -->
     <div class="blogBox">
-      <h2>Update Log</h2>
-      <p>- 1/5/23 removed dungeon masters link <br> updated socials <br> updated about</p>
-      <br>
-      <p>- 1/4/23 started working on domain <br> small changes to look <br> added update log on home page</p>
-     
+      <p>This is my portfolio for most of my programming work. Check out the above pages for more.</p>
+      <p>I personally recommend playing Cookie Clicker in the game tab</p>
+      <p>It is a work in progress and if you have any feedback please let me know</p>
+      
     </div>
   </div>
 </body>

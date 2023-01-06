@@ -3,9 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="img/favicon.png">
+        <link rel="icon" href="img/cookie.png">
         <title>Cookie Clicker</title>
         <style>
+          body{
+            background-color: #D1B577;
+          }
         #content {
           display: flex;
           justify-content: center;
@@ -13,6 +16,8 @@
           user-select: none;
           pointer-events: auto;
           align-items: center;
+          color: #000000;
+          
         }
         #left{
           width: 30%;
@@ -21,6 +26,8 @@
           flex-direction: column;
           border: 2px solid black;
           margin: 1%;
+          background-color: #ffffff;
+          color: #000000;
         }
         #mid{
           height: auto;
@@ -30,6 +37,8 @@
           flex-direction: column;
           border: 4px solid black;
           margin: 1%;
+          background-color: #ffffff;
+          color: #000000;
         }
         #right{
           width: 30%;
@@ -38,6 +47,8 @@
           flex-direction: column;
           border: 2px solid black;
           margin: 1%;
+          background-color: #ffffff;
+          color: #000000;
         }
         #inv{
           display: flex;
@@ -50,15 +61,18 @@
         }
         #shop{
           display: flex;
+          align-items: center;
           justify-content: center;
           flex-direction: column;
           margin-left: 10%;
           margin-right: 10%;
           height: 450px;
           overflow-y:auto;
+          
         }
         #upgrades{
           display: flex;
+          align-items: center;
           justify-content: center;
           flex-direction: column;
           margin-left: 10%;
@@ -75,12 +89,19 @@
         .header{
           display: flex;
           justify-content: center;
+          position:sticky;
         }
         img{
           user-select: none;
         }
         img:active {
           transform: translateY(5%);
+        }
+        @media only screen and (max-width: 768px) {
+          /* For mobile phones: */
+          [class*="col-"] {
+           width: 100%;
+          }
         }
         </style>
 
@@ -402,16 +423,16 @@
           <h1>Upgrades</h1>
         </div>
         <div id="upgrades">
-          <img draggable="false" src="img/up.png" alt="Click Upgrade" width='5%' length='5%' onclick='buyclickup()'>
-          <p>Click Upgrade | +1 Per Click | cost: <span id='clickupcost'>100</span> Cookies |</p>
-          <img draggable="false" src="img/up.png" alt="Pointer Upgrade" width='5%' length='5%' onclick='buypointup()'>
-          <p>Pointer Upgrade | pointer's CPS x2 | cost: <span id='pointupcost'>350</span> Cookies |</p>
-          <img draggable="false" src="img/up.png" alt="Grandma Upgrade" width='5%' length='5%' onclick='buygrandup()'>
-          <p>Grandma Upgrade | grandma's CPS x2 | cost: <span id='grandupcost'>600</span> Cookies |</p>
-          <img draggable="false" src="img/up.png" alt="Farm Upgrade" width='5%' length='5%' onclick='buyfarmup()'>
-          <p>Farm Upgrade | Farm's CPS x2 | cost: <span id='farmupcost'>1400</span> Cookies |</p>
-          <img draggable="false" src="img/up.png" alt="Factory Upgrade" width='5%' length='5%' onclick='buyfacup()'>
-          <p>Factory Upgrade | Factory's CPS x2 | cost: <span id='facupcost'>3000</span> Cookies |</p>
+          <img draggable="false" src="img/clickup.png" alt="Click Upgrade" width='10%' length='5%' onclick='buyclickup()'>
+          <b>Click Upgrade</b> <i>| +1 Per Click | cost: <span id='clickupcost'>100</span> Cookies |</i>
+          <img draggable="false" src="img/pointup.png" alt="Pointer Upgrade" width='10%' length='5%' onclick='buypointup()'>
+          <b>Pointer Upgrade</b>  <i>| Pointer's CPS x2 | cost: <span id='pointupcost'>350</span> Cookies |</i>
+          <img draggable="false" src="img/grandup.png" alt="Grandma Upgrade" width='10%' length='5%' onclick='buygrandup()'>
+          <b>Grandma Upgrade</b>  <i>| Grandma's CPS x2 | cost: <span id='grandupcost'>600</span> Cookies |</i>
+          <img draggable="false" src="img/farmup.png" alt="Farm Upgrade" width='10%' length='5%' onclick='buyfarmup()'>
+          <b>Farm Upgrade</b> <i>| Farm's CPS x2 | cost: <span id='farmupcost'>1400</span> Cookies |</i>
+          <img draggable="false" src="img/facup.png" alt="Factory Upgrade" width='10%' length='5%' onclick='buyfacup()'>
+          <b>Factory Upgrade</b> <i>| Factory's CPS x2 | cost: <span id='facupcost'>3000</span> Cookies |</i>
         </div>
       </div>
       <div id="mid">
@@ -428,15 +449,15 @@
         <div class="header">
           <h1>Shop</h1>
         </div>
-        <div id=shop>
-        <img id='pointer' draggable="false" src="img/pointer.png" alt="Buy Pointer" width="5%" length="5%" onclick='buypointer()'>
-        <p>Pointer | +<span id='pointergain'>0.1</span> CPS | cost: <span id='pointerprice'>10</span> Cookies | owned : <span id='pointerowned'>0</span></p>
-        <img id='grandma' draggable="false" src="img/grandma.png" alt="Buy Grandma" width="5%" length="5%" onclick='buygrandma()'>
-        <p>Grandma | +<span id='grandmagain'>1</span> CPS | cost: <span id='grandmaprice'>30</span> Cookies | owned : <span id='grandmaowned'>0</span></p>
-        <img id='farm' draggable="false" src="img/farm.png" alt="Buy Farm" width="5%" length="5%" onclick='buyfarm()'>
-        <p>Farm | +<span id='farmgain'>3</span> CPS | cost: <span id='farmprice'>140</span> Cookies | owned : <span id='farmowned'>0</span></p>
-        <img id='fac' draggable="false" src="img/fac.png" alt="Buy Factory" width="5%" length="5%" onclick='buyfac()'>
-        <p>Factory | +<span id='facgain'>7</span> CPS | cost: <span id='facprice'>600</span> Cookies | owned : <span id='facowned'>0</span></p>
+        <div id='shop'>
+        <img id='pointer' draggable="false" src="img/pointer.png" alt="Buy Pointer" width="10%" length="5%" onclick='buypointer()'>
+        <b>Pointer</b> <i> +<span id='pointergain'>0.1</span> CPS | cost: <span id='pointerprice'>10</span> Cookies | owned : <span id='pointerowned'>0</span></i>
+        <img id='grandma' draggable="false" src="img/grandma.png" alt="Buy Grandma" width="10%" length="5%" onclick='buygrandma()'>
+        <b>Grandma</b> <i>| +<span id='grandmagain'>1</span> CPS | cost: <span id='grandmaprice'>30</span> Cookies | owned : <span id='grandmaowned'>0</span></i>
+        <img id='farm' draggable="false" src="img/farm.png" alt="Buy Farm" width="10%" length="5%" onclick='buyfarm()'>
+        <b>Farm</b> <i>| +<span id='farmgain'>3</span> CPS | cost: <span id='farmprice'>140</span> Cookies | owned : <span id='farmowned'>0</span></i>
+        <img id='fac' draggable="false" src="img/fac.png" alt="Buy Factory" width="10%" length="5%" onclick='buyfac()'>
+        <b>Factory</b> <i>| +<span id='facgain'>7</span> CPS | cost: <span id='facprice'>600</span> Cookies | owned : <span id='facowned'>0</span></i>
       </div>
       </div>
     </div>

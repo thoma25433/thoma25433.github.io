@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/favicon.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>About</title>
   <style media="screen">
     #content{
@@ -15,34 +16,35 @@
       text-decoration: none;
     }
   </style>
-
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
 </head>
 
 <body>
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" >Home</a>
+    <a href="update.html">Updates</a>
+    <a href="games.html">Games</a>
+    <a href="socials.html">Contact</a>
+    <a href="about.html"class="active">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
   <div id="content">
-
-    <div id="menuBox">
-      <div id="headerBox">
-        <h1>About</h1>
-      </div>
-      <div class="linkBox">
-        <a href="index.html"><img src="img/house.png" height=20px width=20px>Home</a>
-      </div>
-      <div class="linkBox">
-        <a href="games.html"><img src="img/controller.png" height=20px width=20px>Games</a>
-      </div>
-      <div class="linkBox">
-        <a href="about.html"><img src="img/question.png" height=20px width=20px>About</a>
-      </div>
-      <div class="linkBox">
-        <a href="socials.html"><img src="img/phone.png" height=20px width=20px>Socials</a>
-      </div>
-    </div>
     <div class="blogBox">
       <p>Im Tommy, Im 16 and a student at York Tech School of Technology<br>
         in IT. This website is kinda like a portfolio for me, all of my work<br>
         will be uploaded here somewhere. If you have any feedback about a game or<br>
-        website, the best ways to contact me are in the socials tab.</p>
+        website, the best ways to contact me are in the contact tab.</p>
     </div>
   </div>
 </body>

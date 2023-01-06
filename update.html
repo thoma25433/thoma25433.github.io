@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Updates</title>
+  <style media="screen">
+    #content{
+      user-select: none;
+    }
+    a:visited {
+      color: black;
+      text-decoration: none;
+    }
+  </style>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" >Home</a>
+        <a href="update.html"class="active">Updates</a>
+        <a href="games.html">Games</a>
+        <a href="socials.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+  <div id="content">
+    <!-- <div class="blogBox">
+      <p></p>
+
+    </div> -->
+    <div class="blogBox">
+      <h2>Update Log</h2>
+      <p>- 1/6/23 <br> changed design of cookie clicker <br> changed overall design of website</p>
+      <p>- 1/5/23 changed nav bar a lot <br> added separate page for update log <br> changed home</p>
+      <br>
+      <p>- 1/5/23 removed dungeon masters link <br> updated socials <br> updated about</p>
+      <br>
+      <p>- 1/4/23 started working on domain <br> small changes to look <br> added update log on home page</p>
+     
+    </div>
+  </div>
+</body>
+</html>
