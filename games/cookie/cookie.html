@@ -405,10 +405,9 @@
           <div id="alert" style='display: none;'>
           `;
           document.getElementById('alert').innerHTML = style1;
-          // function h(){
-          //   document.getElementById('alert').innerHTML = style2
-          // }
-          // setTimeout(h(), 1000)
+          setInterval(function() {
+              document.getElementById('alert').innerHTML = style2
+          }, 15500)
       }, 15000)
 
         </script>
