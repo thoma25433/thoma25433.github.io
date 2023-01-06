@@ -397,17 +397,17 @@
       setInterval(function() {
           save();
           const style1 = `
-          <div id="alert" style= 'padding:20px; background-color: #60d154;  color: white;  font-size: 20px;  width: 40%;  position: absolute; user-select: none; opacity: 70%; border-radius: 10px;'>
-          <span id="close" onclick="this.parentElement.style.display='none';" style='margin-left: 15px; color: white; font-weight: bold; float: right;  font-size: 22px;  line-height: 20px; cursor: pointer; transition: 0.3s;'>×</span> Data saved
-          </div>
-          `;
+            <div id="alert" style= 'padding:20px; background-color: #60d154;  color: white;  font-size: 20px;  width: 40%;  position: absolute; user-select: none; opacity: 70%; border-radius: 10px;'>
+            <span id="close" onclick="this.parentElement.style.display='none';" style='margin-left: 15px; color: white; font-weight: bold; float: right;  font-size: 22px;  line-height: 20px; cursor: pointer; transition: 0.3s;'>×</span> Data saved
+            </div>
+            `;
           var style2 = ` 
-          <div id="alert" style='display: none;'>
-          `;
+            <div id="alert" style='display: none;'>
+            `;
           document.getElementById('alert').innerHTML = style1;
           setInterval(function() {
               document.getElementById('alert').innerHTML = style2
-          }, 15500)
+          }, 4000)
       }, 15000)
 
         </script>
