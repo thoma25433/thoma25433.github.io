@@ -17,6 +17,7 @@
         pointer-events: auto;
         align-items: center;
         color: #000000;
+        height: 100%;
       }
       #left {
         width: 30%;
@@ -63,20 +64,20 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-left: 10%;
-        margin-right: 10%;
-        height: 450px;
-        overflow-y: auto;
+        margin: 5%;
+        padding: 10%;
+        min-height: 400px;
+        overflow-y: scroll;
       }
       #upgrades {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-left: 10%;
-        margin-right: 10%;
-        height: 450px;
-        overflow-y: auto;
+        margin: 5%;
+        padding: 10%;
+        height: 400px;
+        overflow-y: scroll;
       }
       #click {
         display: flex;
@@ -94,7 +95,22 @@
       }
       img:active {
         transform: translateY(5%);
-      }
+      }button {
+          border-radius: 8px;
+          border: 2px solid gray;
+          transition-duration: 0.4s;
+          cursor: pointer;
+          text-align: center;
+          box-shadow: 0 3px #999;
+          font-family: OCR A;
+          font-weight: bold;
+          margin:2px;
+        }button:active {
+          transform: translateY(3px);
+          box-shadow: 0 1px #737170;
+          color: black;
+          
+        }
     </style>
 
     <script>
@@ -109,6 +125,7 @@
             level: 0,
             cost: 25000,
           },
+          playtime: 0,
         };
         let gen = {
           pointer: {
@@ -172,70 +189,6 @@
         function delSave() {
           localStorage.removeItem("save");
           location.reload();
-        }
-        function update() {
-          document.getElementById("cookieamount").innerText = (
-            Math.round(player.point.owned * 100) / 100
-          ).toFixed(2);
-          document.getElementById("persec").innerText = (
-            Math.round(player.point.sec * 100) / 100
-          ).toFixed(1);
-          document.getElementById("perclick").innerText = player.point.click;
-          document.getElementById("pointerprice").innerText = (
-            Math.round(gen.pointer.cost * 100) / 100
-          ).toFixed(0);
-          document.getElementById("pointerowned").innerText = gen.pointer.owned;
-          document.getElementById("pointergain").innerText = gen.pointer.gain;
-          document.getElementById("grandmaprice").innerText = (
-            Math.round(gen.grandma.cost * 100) / 100
-          ).toFixed(0);
-          document.getElementById("grandmaowned").innerText = gen.grandma.owned;
-          document.getElementById("grandmagain").innerText = gen.grandma.gain;
-          document.getElementById("clickupcost").innerText = (
-            Math.round(upgrade.clickup.cost * 100) / 100
-          ).toFixed(0);
-          document.getElementById("pointupcost").innerText = (
-            Math.round(upgrade.pointup.cost * 100) / 100
-          ).toFixed(0);
-          document.getElementById("grandupcost").innerText = (
-            Math.round(upgrade.grandup.cost * 100) / 100
-          ).toFixed(0);
-          document.getElementById("farmupcost").innerText = (
-            Math.round(upgrade.farmup.cost * 100) / 100
-          ).toFixed(0);
-          document.getElementById("facupcost").innerText = (
-            Math.round(upgrade.facup.cost * 100) / 100
-          ).toFixed(0);
-          document.getElementById("farmprice").innerText = (
-            Math.round(gen.farm.cost * 100) / 100
-          ).toFixed(0);
-          document.getElementById("farmowned").innerText = gen.farm.owned;
-          document.getElementById("farmgain").innerText = gen.farm.gain;
-          document.getElementById("facprice").innerText = (
-            Math.round(gen.factory.cost * 100) / 100
-          ).toFixed(0);
-          document.getElementById("facowned").innerText = gen.factory.owned;
-          document.getElementById("facgain").innerText = gen.factory.gain;
-          format(player.point.owned, "cookieamount");
-          format(player.point.sec, "persec");
-          format(player.point.click, "perclick");
-          format(gen.pointer.cost, "pointerprice");
-          format(gen.pointer.owned, "pointerowned");
-          format(gen.pointer.gain, "pointergain");
-          format(gen.grandma.cost, "grandmaprice");
-          format(gen.grandma.owned, "grandmaowned");
-          format(gen.grandma.gain, "grandmagain");
-          format(gen.farm.cost, "farmprice");
-          format(gen.farm.owned, "farmowned");
-          format(gen.farm.gain, "farmgain");
-          format(gen.factory.cost, "facprice");
-          format(gen.factory.owned, "facowned");
-          format(gen.factory.gain, "facgain");
-          format(upgrade.clickup.cost, "clickupcost");
-          format(upgrade.pointup.cost, "pointupcost");
-          format(upgrade.grandup.cost, "grandupcost");
-          format(upgrade.farmup.cost, "farmupcost");
-          format(upgrade.facup.cost, "facupcost");
         }
         function format(num, place) {
           if (num >= 1000) {
@@ -388,6 +341,100 @@
                 .replace(/\.0$/, "") + "e";
           }
         }
+        function update() {
+          document.getElementById("cookieamount").innerText = (
+            Math.round(player.point.owned * 100) / 100
+          ).toFixed(2);
+          document.getElementById("persec").innerText = (
+            Math.round(player.point.sec * 100) / 100
+          ).toFixed(1);
+          document.getElementById("perclick").innerText = player.point.click;
+          document.getElementById("pointerprice").innerText = (
+            Math.round(gen.pointer.cost * 100) / 100
+          ).toFixed(0);
+          document.getElementById("pointerowned").innerText = gen.pointer.owned;
+          document.getElementById("pointergain").innerText = gen.pointer.gain;
+          document.getElementById("grandmaprice").innerText = (
+            Math.round(gen.grandma.cost * 100) / 100
+          ).toFixed(0);
+          document.getElementById("grandmaowned").innerText = gen.grandma.owned;
+          document.getElementById("grandmagain").innerText = gen.grandma.gain;
+          document.getElementById("clickupcost").innerText = (
+            Math.round(upgrade.clickup.cost * 100) / 100
+          ).toFixed(0);
+          document.getElementById("pointupcost").innerText = (
+            Math.round(upgrade.pointup.cost * 100) / 100
+          ).toFixed(0);
+          document.getElementById("grandupcost").innerText = upgrade.grandup.cost
+          document.getElementById("farmupcost").innerText = upgrade.farmup.cost
+          document.getElementById("facupcost").innerText = upgrade.facup.cost
+          document.getElementById("farmprice").innerText = gen.farm.cost
+          document.getElementById("farmowned").innerText = gen.farm.owned;
+          document.getElementById("farmgain").innerText = gen.farm.gain;
+          document.getElementById("facprice").innerText = gen.factory.cost
+          document.getElementById("facowned").innerText = gen.factory.owned;
+          document.getElementById("facgain").innerText = gen.factory.gain;
+          format(player.point.owned, "cookieamount");
+          format(player.point.sec, "persec");
+          format(player.point.click, "perclick");
+          format(gen.pointer.cost, "pointerprice");
+          format(gen.pointer.owned, "pointerowned");
+          format(gen.pointer.gain, "pointergain");
+          format(gen.grandma.cost, "grandmaprice");
+          format(gen.grandma.owned, "grandmaowned");
+          format(gen.grandma.gain, "grandmagain");
+          format(gen.farm.cost, "farmprice");
+          format(gen.farm.owned, "farmowned");
+          format(gen.farm.gain, "farmgain");
+          format(gen.factory.cost, "facprice");
+          format(gen.factory.owned, "facowned");
+          format(gen.factory.gain, "facgain");
+          format(upgrade.clickup.cost, "clickupcost");
+          format(upgrade.pointup.cost, "pointupcost");
+          format(upgrade.grandup.cost, "grandupcost");
+          format(upgrade.farmup.cost, "farmupcost");
+          format(upgrade.facup.cost, "facupcost");
+          
+          if (player.point.owned < upgrade.clickup.cost) {
+            document.getElementById("BuyButton1").style.backgroundColor = "#f55b5b";
+          }else {
+            document.getElementById("BuyButton1").style.backgroundColor = "#4CAF50";
+          }
+          if (player.point.owned < upgrade.pointup.cost) {
+            document.getElementById("BuyButton2").style.backgroundColor = "#f55b5b";
+          }else {
+            document.getElementById("BuyButton2").style.backgroundColor = "#4CAF50";
+          }
+          if (player.point.owned < upgrade.grandup.cost) {
+            document.getElementById("BuyButton3").style.backgroundColor = "#f55b5b";
+          }else {
+            document.getElementById("BuyButton3").style.backgroundColor = "#4CAF50";
+          }if (player.point.owned < upgrade.farmup.cost) {
+            document.getElementById("BuyButton4").style.backgroundColor = "#f55b5b";
+          }else {
+            document.getElementById("BuyButton4").style.backgroundColor = "#4CAF50";
+          }if (player.point.owned < upgrade.facup.cost) {
+            document.getElementById("BuyButton5").style.backgroundColor = "#f55b5b";
+          }else {
+            document.getElementById("BuyButton5").style.backgroundColor = "#4CAF50";
+          }if (player.point.owned < gen.pointer.cost) {
+            document.getElementById("BuyButton6").style.backgroundColor = "#f55b5b";
+          }else {
+            document.getElementById("BuyButton6").style.backgroundColor = "#4CAF50";
+          }if (player.point.owned < gen.grandma.cost) {
+            document.getElementById("BuyButton7").style.backgroundColor = "#f55b5b";
+          }else {
+            document.getElementById("BuyButton7").style.backgroundColor = "#4CAF50";
+          }if (player.point.owned < gen.farm.cost) {
+            document.getElementById("BuyButton8").style.backgroundColor = "#f55b5b";
+          }else {
+            document.getElementById("BuyButton8").style.backgroundColor = "#4CAF50";
+          }if (player.point.owned < gen.factory.cost) {
+            document.getElementById("BuyButton9").style.backgroundColor = "#f55b5b";
+          }else {
+            document.getElementById("BuyButton9").style.backgroundColor = "#4CAF50";
+          }  
+        }
 
         function add() {
           player.point.owned += player.point.click;
@@ -487,6 +534,11 @@
         }, 100);
 
         setInterval(function () {
+          player.playtime += 1;
+          document.getElementById("playtime").innerText = player.playtime
+        }, 1000);
+
+        setInterval(function () {
           save();
           const style1 = `
             <div id="alert" style= 'padding:20px; background-color: #60d154;  color: white;  font-size: 20px;  width: 40%;  position: absolute; user-select: none; opacity: 70%; border-radius: 10px;'>
@@ -520,12 +572,12 @@
           <img
             draggable="false"
             src="img/clickup.png"
-            alt="Click Upgrade"
-            width="10%"
+            alt="Click Pic"
+            width="11%"
             length="5%"
-            onclick="buyclickup()"
           />
           <b>Click Upgrade</b>
+          <button id="BuyButton1" onclick=" buyclickup()">BUY</button>
           <i
             >| +1 Per Click | cost: <span id="clickupcost">100</span> Cookies
             |</i
@@ -534,11 +586,12 @@
             draggable="false"
             src="img/pointup.png"
             alt="Pointer Upgrade"
-            width="10%"
+            width="11%"
             length="5%"
             onclick="buypointup()"
           />
           <b>Pointer Upgrade</b>
+          <button id="BuyButton2" onclick=" buypointup()">BUY</button>
           <i
             >| Pointer's CPS x2 | cost:
             <span id="pointupcost">350</span> Cookies |</i
@@ -547,11 +600,12 @@
             draggable="false"
             src="img/grandup.png"
             alt="Grandma Upgrade"
-            width="10%"
+            width="11%"
             length="5%"
             onclick="buygrandup()"
           />
           <b>Grandma Upgrade</b>
+          <button id="BuyButton3" onclick=" buygrandup()">BUY</button>
           <i
             >| Grandma's CPS x2 | cost:
             <span id="grandupcost">600</span> Cookies |</i
@@ -560,11 +614,12 @@
             draggable="false"
             src="img/farmup.png"
             alt="Farm Upgrade"
-            width="10%"
+            width="11%"
             length="5%"
             onclick="buyfarmup()"
           />
           <b>Farm Upgrade</b>
+          <button id="BuyButton4" onclick=" buyfarmup()">BUY</button>
           <i
             >| Farm's CPS x2 | cost: <span id="farmupcost">1400</span> Cookies
             |</i
@@ -573,11 +628,12 @@
             draggable="false"
             src="img/facup.png"
             alt="Factory Upgrade"
-            width="10%"
+            width="11%"
             length="5%"
             onclick="buyfacup()"
           />
           <b>Factory Upgrade</b>
+          <button id="BuyButton5" onclick=" buyfacup()">BUY</button>
           <i
             >| Factory's CPS x2 | cost: <span id="facupcost">3000</span> Cookies
             |</i
@@ -589,6 +645,7 @@
           <h1>Cookies : <span id="cookieamount">0</span></h1>
           <h4>Per Click : <span id="perclick">0</span></h4>
           <h4>Per Second : <span id="persec">0</span></h4>
+          <h4>Time Played : <span id="playtime">0</span>s</h4>
         </div>
         <div id="click">
           <img
@@ -617,6 +674,7 @@
             onclick="buypointer()"
           />
           <b>Pointer</b>
+          <button id="BuyButton6" onclick=" buypointer()">BUY</button>
           <i>
             +<span id="pointergain">0.1</span> CPS | cost:
             <span id="pointerprice">10</span> Cookies | owned :
@@ -632,6 +690,7 @@
             onclick="buygrandma()"
           />
           <b>Grandma</b>
+          <button id="BuyButton7" onclick=" buygrandma()">BUY</button>
           <i
             >| +<span id="grandmagain">1</span> CPS | cost:
             <span id="grandmaprice">30</span> Cookies | owned :
@@ -647,6 +706,7 @@
             onclick="buyfarm()"
           />
           <b>Farm</b>
+          <button id="BuyButton8" onclick=" buyfarm()">BUY</button>
           <i
             >| +<span id="farmgain">3</span> CPS | cost:
             <span id="farmprice">140</span> Cookies | owned :
@@ -662,6 +722,7 @@
             onclick="buyfac()"
           />
           <b>Factory</b>
+          <button id="BuyButton9" onclick=" buyfac()">BUY</button>
           <i
             >| +<span id="facgain">7</span> CPS | cost:
             <span id="facprice">600</span> Cookies | owned :
