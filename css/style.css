@@ -1,6 +1,6 @@
- body {
+body {
   height: 100%;
-  background-color: #513AA8;
+  background-color: #513aa8;
 }
 
 #content {
@@ -56,7 +56,7 @@ h2 {
   border: 2px solid #000000;
   border-radius: 5px;
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-around;
   justify-content: center;
   flex-direction: row;
   margin: 10px;
@@ -65,7 +65,7 @@ h2 {
   background-color: #ffffff;
   box-shadow: 5px 5px #000000;
   position: sticky;
-  opacity: .75;
+  opacity: 0.75;
   top: 0;
 }
 
@@ -86,7 +86,8 @@ h2 {
   background-color: #adacb0;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: #000000;
   text-decoration: none;
 }
@@ -148,7 +149,9 @@ a:active {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
+  .topnav a:not(:first-child) {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
@@ -156,7 +159,9 @@ a:active {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive .icon {
     position: absolute;
     right: 0;

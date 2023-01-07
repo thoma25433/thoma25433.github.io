@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>About</title>
+    <style media="screen">
+      #content {
+        user-select: none;
+      }
+      a:visited {
+        color: black;
+        text-decoration: none;
+      }
+    </style>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </head>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/favicon.png">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>About</title>
-  <style media="screen">
-    #content{
-      user-select: none;
-    }
-    a:visited {
-      color: black;
-      text-decoration: none;
-    }
-  </style>
-<script>
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
-  </script>
-</head>
-
-<body>
-  <div class="topnav" id="myTopnav">
-    <a href="index.html" >Home</a>
-    <a href="update.html">Updates</a>
-    <a href="games.html">Games</a>
-    <a href="socials.html">Contact</a>
-    <a href="about.html"class="active">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-  <div id="content">
-    <div class="blogBox">
-      <p>Im Tommy, Im 16 and a student at York Tech School of Technology<br>
-        in IT. This website is kinda like a portfolio for me, all of my work<br>
-        will be uploaded here somewhere. If you have any feedback about a game or<br>
-        website, the best ways to contact me are in the contact tab.</p>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="update.html">Updates</a>
+      <a href="games.html">Games</a>
+      <a href="socials.html">Contact</a>
+      <a href="about.html" class="active">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
-  </div>
-</body>
-
+    <div id="content">
+      <div class="blogBox">
+        <p>
+          Im Tommy, Im 16 and a student at York Tech School of Technology<br />
+          in IT. This website is kinda like a portfolio for me, all of my
+          work<br />
+          will be uploaded here somewhere. If you have any feedback about a game
+          or<br />
+          website, the best ways to contact me are in the contact tab.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
