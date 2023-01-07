@@ -99,7 +99,7 @@
 
     <script>
       {
-        var player = {
+        let player = {
           point: {
             owned: 0,
             sec: 0,
@@ -110,7 +110,7 @@
             cost: 25000,
           },
         };
-        var gen = {
+        let gen = {
           pointer: {
             cost: 10,
             gain: 0.1,
@@ -132,7 +132,7 @@
             owned: 0,
           },
         };
-        var upgrade = {
+        let upgrade = {
           clickup: {
             cost: 500,
             owned: 0,
@@ -155,7 +155,7 @@
           },
         };
         function save() {
-          var save = {
+          let save = {
             player: player,
             gen: gen,
             upgrade: upgrade,
@@ -163,7 +163,7 @@
           localStorage.setItem("save", JSON.stringify(save));
         }
         function load() {
-          var savegame = JSON.parse(localStorage.getItem("save"));
+          let savegame = JSON.parse(localStorage.getItem("save"));
           if (typeof savegame.player !== "undefined") player = savegame.player;
           if (typeof savegame.gen !== "undefined") gen = savegame.gen;
           if (typeof savegame.upgrade !== "undefined")
@@ -493,7 +493,7 @@
             <span id="close" onclick="this.parentElement.style.display='none';" style='margin-left: 15px; color: white; font-weight: bold; float: right;  font-size: 22px;  line-height: 20px; cursor: pointer; transition: 0.3s;'>×</span> Saved
             </div>
             `;
-          var style2 = ` 
+          let style2 = ` 
             <div id="alert" style='display: none;'>
             `;
           document.getElementById("alert").innerHTML = style1;
