@@ -193,96 +193,96 @@
         function format(num, place) {
           if (num >= 1000) {
             document.getElementById(place).innerText =
-              (num / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+              (num / 1000).toFixed(2).replace(/\.0$/, "") + "k";
           }
           if (num >= 1000000) {
             document.getElementById(place).innerText =
-              (num / 1000000).toFixed(1).replace(/\.0$/, "") + "m";
+              (num / 1000000).toFixed(2).replace(/\.0$/, "") + "m";
           }
           if (num >= 1000000000) {
             document.getElementById(place).innerText =
-              (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "b";
+              (num / 1000000000).toFixed(2).replace(/\.0$/, "") + "b";
           }
           if (num >= 1000000000000) {
             document.getElementById(place).innerText =
-              (num / 1000000000000).toFixed(1).replace(/\.0$/, "") + "t";
+              (num / 1000000000000).toFixed(2).replace(/\.0$/, "") + "t";
           }
           if (num >= 1000000000000000) {
             document.getElementById(place).innerText =
-              (num / 1000000000000000).toFixed(1).replace(/\.0$/, "") + "qd";
+              (num / 1000000000000000).toFixed(2).replace(/\.0$/, "") + "qd";
           }
           if (num >= 1000000000000000000) {
             document.getElementById(place).innerText =
-              (num / 1000000000000000000).toFixed(1).replace(/\.0$/, "") + "qn";
+              (num / 1000000000000000000).toFixed(2).replace(/\.0$/, "") + "qn";
           }
           if (num >= 1000000000000000000000) {
             document.getElementById(place).innerText =
-              (num / 1000000000000000000000).toFixed(1).replace(/\.0$/, "") +
+              (num / 1000000000000000000000).toFixed(2).replace(/\.0$/, "") +
               "sx";
           }
           if (num >= 1000000000000000000000000) {
             document.getElementById(place).innerText =
-              (num / 1000000000000000000000000).toFixed(1).replace(/\.0$/, "") +
+              (num / 1000000000000000000000000).toFixed(2).replace(/\.0$/, "") +
               "sp";
           }
           if (num >= 1000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "o";
           }
           if (num >= 1000000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "n";
           }
           if (num >= 1000000000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "d";
           }
           if (num >= 1000000000000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "ud";
           }
           if (num >= 1000000000000000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "dd";
           }
           if (num >= 1000000000000000000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "td";
           }
           if (num >= 1000000000000000000000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "qtd";
           }
           if (num >= 1000000000000000000000000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "qid";
           }
           if (num >= 1000000000000000000000000000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "sd";
           }
           if (num >= 1000000000000000000000000000000000000000000000000000000) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "spd";
           }
           if (
@@ -290,7 +290,7 @@
           ) {
             document.getElementById(place).innerText =
               (num / 1000000000000000000000000000000000000000000000000000000000)
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "od";
           }
           if (
@@ -301,7 +301,7 @@
                 num /
                 1000000000000000000000000000000000000000000000000000000000000
               )
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "nd";
           }
           if (
@@ -313,7 +313,7 @@
                 num /
                 1000000000000000000000000000000000000000000000000000000000000000
               )
-                .toFixed(1)
+                .toFixed(12)
                 .replace(/\.0$/, "") + "vt";
           }
           if (
@@ -325,7 +325,7 @@
                 num /
                 1000000000000000000000000000000000000000000000000000000000000000000
               )
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "ct";
           }
           if (
@@ -337,7 +337,7 @@
                 num /
                 1000000000000000000000000000000000000000000000000000000000000000000000
               )
-                .toFixed(1)
+                .toFixed(2)
                 .replace(/\.0$/, "") + "e";
           }
         }
@@ -365,15 +365,33 @@
           document.getElementById("pointupcost").innerText = (
             Math.round(upgrade.pointup.cost * 100) / 100
           ).toFixed(0);
-          document.getElementById("grandupcost").innerText = upgrade.grandup.cost
-          document.getElementById("farmupcost").innerText = upgrade.farmup.cost
-          document.getElementById("facupcost").innerText = upgrade.facup.cost
-          document.getElementById("farmprice").innerText = gen.farm.cost
-          document.getElementById("farmowned").innerText = gen.farm.owned;
-          document.getElementById("farmgain").innerText = gen.farm.gain;
-          document.getElementById("facprice").innerText = gen.factory.cost
-          document.getElementById("facowned").innerText = gen.factory.owned;
-          document.getElementById("facgain").innerText = gen.factory.gain;
+          document.getElementById("grandupcost").innerText = (
+            Math.round(upgrade.grandup.cost * 100) / 100
+          ).toFixed(0);
+          document.getElementById("farmupcost").innerText = (
+            Math.round(upgrade.farmup.cost * 100) / 100
+          ).toFixed(0);
+          document.getElementById("facupcost").innerText = (
+            Math.round(upgrade.facup.cost * 100) / 100
+          ).toFixed(0);
+          document.getElementById("farmprice").innerText = (
+            Math.round(gen.farm.cost * 100) / 100
+          ).toFixed(0);
+          document.getElementById("farmowned").innerText = (
+            Math.round(gen.farm.owned * 100) / 100
+          ).toFixed(0);
+          document.getElementById("farmgain").innerText = (
+            Math.round(gen.farm.gain * 100) / 100
+          ).toFixed(0);
+          document.getElementById("facprice").innerText = (
+            Math.round(gen.factory.cost * 100) / 100
+          ).toFixed(0);
+          document.getElementById("facowned").innerText = (
+            Math.round(gen.factory.owned * 100) / 100
+          ).toFixed(0);
+          document.getElementById("facgain").innerText = (
+            Math.round(gen.factory.gain * 100) / 100
+          ).toFixed(0);
           format(player.point.owned, "cookieamount");
           format(player.point.sec, "persec");
           format(player.point.click, "perclick");
@@ -394,7 +412,6 @@
           format(upgrade.grandup.cost, "grandupcost");
           format(upgrade.farmup.cost, "farmupcost");
           format(upgrade.facup.cost, "facupcost");
-          
           if (player.point.owned < upgrade.clickup.cost) {
             document.getElementById("BuyButton1").style.backgroundColor = "#f55b5b";
           }else {
