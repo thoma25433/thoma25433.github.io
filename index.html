@@ -21,7 +21,7 @@
     </script>
     <title>Home</title>
     <style media="screen">
-      #content {
+      body {
         user-select: none;
       }
       a:visited {
@@ -30,10 +30,48 @@
       }
     </style>
     <!-- <script src="js/functions.js" charset="utf-8"></script> -->
+    <style>
+      .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+      }
+      
+      .active, .accordion:hover {
+        background-color: #ccc;
+      }
+      
+      .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+      
+      .active:after {
+        content: "\2212";
+      }
+      
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+      </style>
   </head>
 
   <body>
-    <div class="topnav" id="myTopnav">
+    <!-- <div class="topnav" id="myTopnav">
       <a href="index.html" class="active">Home</a>
       <a href="update.html">Updates</a>
       <a href="games.html">Games</a>
@@ -42,7 +80,7 @@
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
-    </div>
+    </div> -->
     <div id="content">
       <!-- <div id="menuBox">
       <div id="headerBox">
@@ -64,14 +102,95 @@
       <div class="blogBox">
         <p>
           This is my portfolio for most of my programming work. Check out the
-          above pages for more.
+          pages below for more.
         </p>
-        <p>I personally recommend playing Cookie Clicker in the game tab</p>
+        <p>I recommend playing Cookie Clicker in the games tab</p>
         <p>
           It is a work in progress and if you have any feedback please let me
           know
         </p>
+        
+<button class="accordion">Games</button>
+<div class="panel">
+  <div class="gameBox">
+    <br />
+    <a href="games/idle/idle.html"><button>Idle Business</button></a>
+    <br />
+    <br />
+    <!-- <a href="games/dungeonmasters/dungeon.html"><button>Dungeon Masters</button></a>
+  <br>
+  <br> -->
+    <a href="www/index.html"><button>Get to School</button></a>
+    <br />
+    <br />
+    <a href="games/cookie/cookie.html"><button>Cookie Clicker</button></a>
+  </div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+<br>
+<br>
+<h2>Update Log</h2>
+        <p>
+          - 3/2/23 <br />
+          moved games to front page <br />
+          got rid of nav bar<br />
+          moved everything to 1 page
+        </p>
+        <p>
+          - 1/6/23 <br />
+          changed design of cookie clicker <br />
+          changed overall design of website
+        </p>
+        <p>
+          - 1/5/23 <br />
+           changed nav bar a lot <br />
+          added separate page for update log <br />
+          changed home
+        </p>
+        <br />
+        <p>
+          - 1/5/23 <br />
+           removed dungeon masters link <br />
+          updated socials <br />
+          updated about
+        </p>
+        <br />
+        <p>
+          - 1/4/23 <br />
+           started working on domain <br />
+          small changes to look <br />
+          added update log on home page
+        </p>
       </div>
+      <footer>
+        <h4 style=" margin: 10px;">Contact:</h4>
+        <h6>
+        Github - thoma25433 <br />Discord - angularfish#7066 <br />Instagram - angularfish6
+        </h6>
+        <h4 style=" margin: 10px;">About Me:</h4>
+        <h6>Im Tommy, Im 16 and a student at York Tech School of Technology<br />
+          in IT. This website is kinda like a portfolio for me, all of my
+          work<br />
+          will be uploaded here somewhere. If you have any feedback about a game
+          or<br />
+          website, the best ways to contact me are in the contact section.</h6>
+        </footer>
     </div>
   </body>
 </html>
