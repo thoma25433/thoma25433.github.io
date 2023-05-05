@@ -28,7 +28,7 @@
         margin: 1%;
         background-color: #ffffff;
         color: #000000;
-        border-radius: 5px;
+        border-radius: 10%;
       }
       #mid {
         height: auto;
@@ -37,7 +37,7 @@
         justify-content: center;
         flex-direction: column;
         border: 4px solid black;
-        border-radius: 5px;
+        border-radius: 10%;
         margin: 1%;
         background-color: #ffffff;
         color: #000000;
@@ -50,7 +50,7 @@
         border: 2px solid black;
         margin: 1%;
         background-color: #ffffff;
-        border-radius: 5px;
+        border-radius: 10%;
         color: #000000;
       }
       #inv {
@@ -133,22 +133,37 @@
         let gen = {
           pointer: {
             cost: 10,
-            gain: 0.1,
+            gain: 0.2,
             owned: 0,
           },
           grandma: {
-            cost: 60,
+            cost: 50,
             gain: 1,
             owned: 0,
           },
           farm: {
-            cost: 350,
-            gain: 3,
+            cost: 250,
+            gain: 5,
             owned: 0,
           },
-          factory: {
-            cost: 2300,
-            gain: 7,
+          robot: {
+            cost: 1000,
+            gain: 10,
+            owned: 0,
+          },
+	  factory: {
+            cost: 4000,
+            gain: 25,
+            owned: 0,
+          },
+          plantation: {
+            cost: 8000,
+            gain: 55,
+            owned: 0,
+          },
+          company: {
+            cost: 15000,
+            gain: 80,
             owned: 0,
           },
         };
