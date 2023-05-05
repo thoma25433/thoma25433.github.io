@@ -7,7 +7,7 @@
     <title>Cookie Clicker</title>
     <style>
       body {
-        background-color: #3A3635;
+        background-color: #ab7d68;
       }
       #content {
         display: flex;
@@ -556,33 +556,12 @@
         setInterval(function () {
           player.playtime += 1;
           document.getElementById("playtime").innerText = player.playtime
-        }, 1000);
-
-        setInterval(function () {
           save();
-          const style1 = `
-            <div id="alert" style= 'padding:20px; background-color: #60d154;  color: white;  font-size: 20px;  width: 40%;  position: absolute; user-select: none; opacity: 70%; border-radius: 10px;'>
-            <span id="close" onclick="this.parentElement.style.display='none';" style='margin-left: 15px; color: white; font-weight: bold; float: right;  font-size: 22px;  line-height: 20px; cursor: pointer; transition: 0.3s;'>×</span> Saved
-            </div>
-            `;
-          let style2 = ` 
-            <div id="alert" style='display: none;'>
-            `;
-          document.getElementById("alert").innerHTML = style1;
-          setInterval(function () {
-            document.getElementById("alert").innerHTML = style2;
-          }, 20000);
-        }, 15000);
+        }, 1000);
       }
     </script>
   </head>
   <body onload="load()">
-    <div id="alert">
-      <span
-        id="close"
-        onclick="this.parentElement.style.display='none';"
-      ></span>
-    </div>
     <div id="content">
       <div id="left">
         <div class="header">
@@ -656,8 +635,7 @@
           <button id="BuyButton5" onclick=" buyfacup()">BUY</button>
           <i
             >| Factory's CPS x2 | cost: <span id="facupcost">3000</span> Cookies
-            |</i
-          >
+            |</i>
         </div>
       </div>
       <div id="mid">
