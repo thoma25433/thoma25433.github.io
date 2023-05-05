@@ -52,12 +52,22 @@
           font-weight: bold;
         }#inv {
           display: flex;
-          justify-content: space-around;
-          flex-direction: row;
+          flex-direction: column;
           position: sticky;
           gap: 10px;
-          min-width: 35%;
-          min-height: 25%;
+          justify-content: center;
+          border: 5px solid #78756f;
+          border-radius: 5px;
+          padding-top: 1%;
+          padding-left: 2%;
+          padding-right: 5%;
+          padding-bottom: 1%;
+          flex-direction: column;
+          background-color: #b3b0aa;
+          box-shadow: 2px 2px #737170;
+          left: 0;
+          bottom: 0;
+
         }.invbox {
           display: flex;
           border: 3px solid #78756f;
@@ -82,10 +92,106 @@
           box-shadow: 0 2px #737170;
           color: black;
         }
+        .container{
+  top:0px;
+  background:#000015;
+  width:94%;
+  height:100%;
+  min-height: 800px;
+  position:absolute;
+  left:0%;
+  background-size: cover;
+  z-index: -1;
+  }
+.loader {
+    text-align: center;
+}
+.loader span {
+    display: inline-block;
+    margin: -280px 40px 54px  -34px;
+         background:url("https://cdn.theatlantic.com/assets/media/img/posts/Screen%20Shot%202013-10-08%20at%209.13.38%20AM.png");
+  background-size: contain;
+    -webkit-animation: loader 10s infinite  linear;
+    -moz-animation: loader 10s infinite  linear;
+}
+.loader span:nth-child(5n+5) {
+    -webkit-animation-delay: 1.3s;
+    -moz-animation-delay: 1.3s;
+}
+.loader span:nth-child(3n+2) {
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+}
+.loader span:nth-child(2n+5) {
+    -webkit-animation-delay: 1.7s;
+    -moz-animation-delay: 1.7s;
+}
+.loader span:nth-child(3n+10) {
+    -webkit-animation-delay: 2.7s;
+    -moz-animation-delay: 2.7s;
+}
+.loader span:nth-child(7n+2) {
+    -webkit-animation-delay: 3.5s;
+    -moz-animation-delay: 3.5s;
+}
+.loader span:nth-child(4n+5) {
+    -webkit-animation-delay: 5.5s;
+    -moz-animation-delay: 5.5s;
+}
+.loader span:nth-child(3n+7) {
+    -webkit-animation-delay: 8s;
+    -moz-animation-delay: 8s;
+}
+@-webkit-keyframes loader {
+  0% {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+
+  -webkit-transform: translate(0, 0px) rotateZ(0deg);
+  }
+  75% {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+
+  -webkit-transform: translate(100px, 600px) rotateZ(270deg); 
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+
+  -webkit-transform: translate(150px, 800px) rotateZ(360deg);
+  }
+}
+@-moz-keyframes loader {
+  0% {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+    
+  -webkit-transform: translate(0, 0px) rotateZ(0deg);
+  }
+  75% {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+   
+  -webkit-transform: translate(100px, 600px) rotateZ(270deg); 
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+    
+  -webkit-transform: translate(150px, 800px) rotateZ(360deg);
+  }
+}
         </style>
         <script>
-
-        var player = {
+{
+        let player = {
           point: {
             description: 'the amount of points/per second you have',
             owned: 0,
@@ -97,7 +203,7 @@
             cost: 25000,
         }
       };
-        var gens = {
+        let gens = {
           gen1: {
             name: 'Worker',
             description: 'A regular Worker for your company',
@@ -109,31 +215,182 @@
             name: 'Secretary',
             description: 'A secretary for your company',
             gain: 3,
-            cost: 500,
+            cost: 200,
             owned: 0,
           },
           gen3: {
             name: 'Manager',
             description: 'A manager for your company',
             gain: 7,
-            cost: 3000,
+            cost: 1000,
             owned: 0,
           }
       };
+      function format(num, place) {
+          if (num >= 1000) {
+            document.getElementById(place).innerText =
+              (num / 1000).toFixed(2).replace(/\.0$/, "") + "k";
+          }
+          if (num >= 1000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000).toFixed(2).replace(/\.0$/, "") + "m";
+          }
+          if (num >= 1000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000).toFixed(2).replace(/\.0$/, "") + "b";
+          }
+          if (num >= 1000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000).toFixed(2).replace(/\.0$/, "") + "t";
+          }
+          if (num >= 1000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000).toFixed(2).replace(/\.0$/, "") + "qd";
+          }
+          if (num >= 1000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000).toFixed(2).replace(/\.0$/, "") + "qn";
+          }
+          if (num >= 1000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000).toFixed(2).replace(/\.0$/, "") +
+              "sx";
+          }
+          if (num >= 1000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000).toFixed(2).replace(/\.0$/, "") +
+              "sp";
+          }
+          if (num >= 1000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "o";
+          }
+          if (num >= 1000000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "n";
+          }
+          if (num >= 1000000000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "d";
+          }
+          if (num >= 1000000000000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "ud";
+          }
+          if (num >= 1000000000000000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "dd";
+          }
+          if (num >= 1000000000000000000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "td";
+          }
+          if (num >= 1000000000000000000000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "qtd";
+          }
+          if (num >= 1000000000000000000000000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "qid";
+          }
+          if (num >= 1000000000000000000000000000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "sd";
+          }
+          if (num >= 1000000000000000000000000000000000000000000000000000000) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "spd";
+          }
+          if (
+            num >= 1000000000000000000000000000000000000000000000000000000000
+          ) {
+            document.getElementById(place).innerText =
+              (num / 1000000000000000000000000000000000000000000000000000000000)
+                .toFixed(2)
+                .replace(/\.0$/, "") + "od";
+          }
+          if (
+            num >= 1000000000000000000000000000000000000000000000000000000000000
+          ) {
+            document.getElementById(place).innerText =
+              (
+                num /
+                1000000000000000000000000000000000000000000000000000000000000
+              )
+                .toFixed(2)
+                .replace(/\.0$/, "") + "nd";
+          }
+          if (
+            num >=
+            1000000000000000000000000000000000000000000000000000000000000000
+          ) {
+            document.getElementById(place).innerText =
+              (
+                num /
+                1000000000000000000000000000000000000000000000000000000000000000
+              )
+                .toFixed(12)
+                .replace(/\.0$/, "") + "vt";
+          }
+          if (
+            num >=
+            1000000000000000000000000000000000000000000000000000000000000000000
+          ) {
+            document.getElementById(place).innerText =
+              (
+                num /
+                1000000000000000000000000000000000000000000000000000000000000000000
+              )
+                .toFixed(2)
+                .replace(/\.0$/, "") + "ct";
+          }
+          if (
+            num >=
+            1000000000000000000000000000000000000000000000000000000000000000000000
+          ) {
+            document.getElementById(place).innerText =
+              (
+                num /
+                1000000000000000000000000000000000000000000000000000000000000000000000
+              )
+                .toFixed(2)
+                .replace(/\.0$/, "") + "e";
+          }
+        }
         function update() {
-            document.getElementById("showPoint").innerText = player.point.owned;
-            document.getElementById("showpsec").innerText = player.point.sec;
-            document.getElementById("showplvl").innerText = player.pres.level;
-            document.getElementById("prescost").innerText = player.pres.cost;
-            document.getElementById("gen1add").innerText = gens.gen1.gain;
-            document.getElementById("gen1price").innerText = gens.gen1.cost;
-            document.getElementById("gen1num").innerText = gens.gen1.owned;
-            document.getElementById("gen2add").innerText = gens.gen2.gain;
-            document.getElementById("gen2price").innerText = gens.gen2.cost;
-            document.getElementById("gen2num").innerText = gens.gen2.owned;
-            document.getElementById("gen3add").innerText = gens.gen3.gain;
-            document.getElementById("gen3price").innerText = gens.gen3.cost;
-            document.getElementById("gen3num").innerText = gens.gen3.owned;
+            document.getElementById("showPoint").innerText = (Math.round(player.point.owned * 100) / 100).toFixed(2);
+            document.getElementById("showpsec").innerText = (Math.round(player.point.sec * 100) / 100).toFixed(1);
+            document.getElementById("showplvl").innerText = (Math.round(player.pres.level * 100) / 100).toFixed(0);
+            document.getElementById("prescost").innerText = (Math.round(player.pres.cost * 100) / 100).toFixed(0);
+            document.getElementById("gen1add").innerText = (Math.round(gens.gen1.gain * 100) / 100).toFixed(0);
+            document.getElementById("gen1price").innerText = (Math.round(gens.gen1.cost * 100) / 100).toFixed(0);
+            document.getElementById("gen1num").innerText = (Math.round(gens.gen1.owned * 100) / 100).toFixed(0);
+            document.getElementById("gen2add").innerText = (Math.round(gens.gen2.gain * 100) / 100).toFixed(0);
+            document.getElementById("gen2price").innerText = (Math.round(gens.gen2.cost * 100) / 100).toFixed(0);
+            document.getElementById("gen2num").innerText = (Math.round(gens.gen2.owned * 100) / 100).toFixed(0);
+            document.getElementById("gen3add").innerText = (Math.round(gens.gen3.gain * 100) / 100).toFixed(0);
+            document.getElementById("gen3price").innerText = (Math.round(gens.gen3.cost * 100) / 100).toFixed(0);
+            document.getElementById("gen3num").innerText = (Math.round(gens.gen3.owned * 100) / 100).toFixed(0);
             if (player.point.owned < gens.gen1.cost) {
               document.getElementById('buyButton1').style.backgroundColor = '#f55b5b';
             }else {
@@ -154,6 +411,20 @@
             }else {
               document.getElementById('prest').style.backgroundColor = '#4CAF50';
             }
+            format(player.point.owned, "showPoint");
+            format(player.point.sec, "showpsec");
+            format(player.pres.level, "showplvl");
+            format(player.pres.cost, "prescost");
+            format(gens.gen1.gain, "gen1add");
+            format(gens.gen1.cost, "gen1price");
+            format(gens.gen1.owned, "gen1num");
+            format(gens.gen2.gain, "gen2add");
+            format(gens.gen2.cost, "gen2price");
+            format(gens.gen2.owned, "gen2num");
+            format(gens.gen3.gain, "gen3add");
+            format(gens.gen3.cost, "gen3price");
+            format(gens.gen3.owned, "gen3num");
+            save();
         }
         function save() {
           var save = {
@@ -248,26 +519,54 @@
               document.getElementById("settingsbox").style.display = "none";
               document.getElementById("gam2").style.display = "block";
             }
-
+}
 </script>
     </head>
     <body onload="load()">
+      <div class="container">
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
       <table>
         <div id="content">
           <div id="headerbox">
               <h1>Idle Business</h1>
           </div>
-          <div id="inv">
-              <p class="invbox">Money :&nbsp<span id="showPoint">0</span></p>
-              <p class="invbox">Per Second :&nbsp<span id="showpsec">0</span></p>
-              <p class="invbox">Business :&nbsp#<span id="showplvl">0</span></p>
-          </div>
+          
             <div id="game">
-              <img id='settingpic' src="img/gear.png" alt="Settings" width="50px" length="50px" onclick='setting()'>
+              <img id='settingpic' src="gear.png" alt="setting" width="50px" length="50px" onclick='setting()'>
     <div id="settingsbox">
         <button id='back' onclick='back()'> &lt-- </button>
         <div id="savebox">
-        <h2>Game Explanation</h2>You just bought your first business!<br>Hire workers to get more money. Once you get enough money, you can <br>start a new business and get a boost in earnings.<br>Can you come out on top?<br><br><br><br><br><br><p>Made by: Tommy Blount</p>Discord: parsifaal#8008<br>Dm me with any suggestions<br><br>
+        <h2>Game Explanation</h2>You just bought your first business!<br>Hire workers to get more money. Once you get enough money, you can <br>start a new business and get a boost in earnings.<br><br><br><br><br><p>Made by: Tommy Blount</p><br><br>
         <button onclick="delSave()">Delete Save</button>
     </div>
     </div>
@@ -281,21 +580,30 @@
                     <div class="gens">
                       <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
                         <button onclick="buygen2()" id="buyButton2">Hire Secretary </button>
-                        <h5>+<span id="gen2add">3</span> Money Per Second | Cost: <span id="gen2price">500</span> | Owned: <span id="gen2num">0</span></h5>
+                        <h5>+<span id="gen2add">3</span> Money Per Second | Cost: <span id="gen2price">200</span> | Owned: <span id="gen2num">0</span></h5>
                     </div>
                     <div class="gens">
                       <!-- <img src="generator.png" alt="generator" style="width:100px;height:75px;"> -->
                         <button onclick="buygen3()" id="buyButton3">Hire Manager</button>
-                        <h5>+<span id="gen3add">7</span> Money Per Second | Cost: <span id="gen3price">3000</span> | Owned: <span id="gen3num">0</span></h5>
+                        <h5>+<span id="gen3add">7</span> Money Per Second | Cost: <span id="gen3price">1000</span> | Owned: <span id="gen3num">0</span></h5>
                     </div>
                   </div>
                   <div id="prestigebox">
                       <button onclick="prestige()" id="prest">Start New Business</button>
                       <h5>Costs <span id="prescost">25000</span> money and resets your progress, but boosts your earnings by 1.5x</h5>
                       <br>
-                  </div>
+                      <div id="inv" style="justify-content: ;">
+              <p>Money :&nbsp<span id="showPoint">0</span></p>
+              <p>Per Second :&nbsp<span id="showpsec">0</span></p>
+              <p>Business :&nbsp#<span id="showplvl">0</span></p>
 </div>
+                  </div>
+
+          </div>
+</div>
+
         </div>
+
       </table>
     </body>
 </html>
